@@ -3,31 +3,6 @@ package definition;
 import adt.ContactListADT;
 
 public class ContactList<Person> implements ContactListADT<Person> {
-    private static class Node<Person> {
-        private Person data;
-        private Node<Person> next;
-
-        public Node(Person data, Node<Person> next) {
-            this.data = data;
-            this.next = next;
-        }
-
-        public Person getData() {
-            return data;
-        }
-
-        public void setData(Person data) {
-            this.data = data;
-        }
-
-        public Node<Person> getNext() {
-            return next;
-        }
-
-        public void setNext(Node<Person> next) {
-            this.next = next;
-        }
-    }
 
     @Override
     public boolean add(Person person) {
@@ -47,5 +22,31 @@ public class ContactList<Person> implements ContactListADT<Person> {
     @Override
     public void viewAllContacts() {
 
+    }
+
+    private static class Node<Person> {
+        private Person data;
+        private Node<Person> next;
+
+        private Node(Person data, Node<Person> next) {
+            this.data = data;
+            this.next = next;
+        }
+
+        private Person getData() {
+            return data;
+        }
+
+        private void setData(Person data) {
+            this.data = data;
+        }
+
+        private Node<Person> getNext() {
+            return next;
+        }
+
+        private void setNext(Node<Person> next) {
+            this.next = next;
+        }
     }
 }
