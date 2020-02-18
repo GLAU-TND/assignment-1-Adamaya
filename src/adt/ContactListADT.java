@@ -5,7 +5,7 @@ public interface ContactListADT<Person> {
 
     boolean delete(int index);
 
-    boolean search(String name);
+    void search(String name);
 
     void viewAllContacts();
 }
