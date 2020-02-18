@@ -50,7 +50,6 @@ public class Main {
                     email = scanner.next();
                     Person person = new Person(firstName, lastName, contactNumber, email);
                     contactList.add(person);
-                    System.out.println(contactList.getSize());
                     break;
                 case 2:
                     contactList.viewAllContacts();
