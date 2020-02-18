@@ -13,7 +13,8 @@ public class Person {
         sb.append("Last Name: ").append(lastName).append('\n');
         sb.append("Contact No: ");
         for (int i = 0; i < contactNo.length; i++) {
-            sb.append(contactNo[i] + (contactNo[i] != null && i < contactNo.length - 1 ? ", " : ""));
+            sb.append((contactNo[0] != null && i == 0 ? contactNo[0] : "") + (contactNo[1] != null && i == 1 ? ", " + contactNo[1] : "") +
+                    (contactNo[2] != null && i == 2 ? ", " + contactNo[i] : ""));
         }
         sb.append("\nEmail: ").append(email).append('\n');
         sb.append("-------- * -------- * -------- * --------\n");
