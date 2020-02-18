@@ -33,6 +33,7 @@ public class Main {
                     firstName = scanner.nextLine();
                     System.out.println("Last Name:");
                     lastName = scanner.nextLine();
+                    contactList.setName(firstName, lastName);
                     System.out.println("Contact Number:");
                     contactNumber[0] = scanner.nextLine();
                     for (int i = 1; i <= 2; i++) {
@@ -45,14 +46,26 @@ public class Main {
                         }
                     }
                     System.out.println("Enter the Email:");
-
                     email = scanner.next();
                     Person person = new Person(firstName, lastName, contactNumber, email);
-                    System.out.println(contactList.add(person));
+                    contactList.add(person);
                     System.out.println(contactList.getSize());
                     break;
                 case 2:
                     contactList.viewAllContacts();
+                    break;
+                case 4:
+                    System.out.println("Here are your contacts");
+                    for (int i = 0; i < contactList.getArrayOfNames().size(); i++) {
+                        System.out.println((i + 1) + ". " + contactList.getArrayOfNames().get(i));
+                    }
+                    System.out.println("Press the number against the contact to delete it: ");
+                    int index = scanner.nextInt();
+                    scanner.next();
+                    String tempName = contactList.getArrayOfNames().get(index - 1).toString();
+                    contactList.delete(index);
+                    System.out.println(tempName + " has been deleted from your contacts");
+                    break;
             }
 
         }
