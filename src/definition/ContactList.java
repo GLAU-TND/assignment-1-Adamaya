@@ -5,9 +5,11 @@ import adt.ContactListADT;
 import java.util.ArrayList;
 
 public class ContactList<Person> implements ContactListADT<Person> {
+    ArrayList arrayOfNames = new ArrayList<String>();
+    ArrayList arrayOfFirstName = new ArrayList<String>();
     private Node<Person> head;
     private int size = 0;
-    ArrayList arrayOfNames = new ArrayList<String>();
+    private int counter = 0;
 
     private void addFirst(Person personData) {
         head = new Node<>(personData, head);
@@ -125,10 +127,34 @@ public class ContactList<Person> implements ContactListADT<Person> {
         return response;
     }
 
+    public void setFirstNameInList(String name) {
+        arrayOfFirstName.add(name);
+    }
+
+    public ArrayList getArrayOfFirstName() {
+        return arrayOfFirstName;
+    }
 
     @Override
-    public boolean search(String name) {
-        return false;
+    public void search(String name) {
+        for (int i = 0; i < arrayOfFirstName.size(); i++) {
+            if (name.compareTo(arrayOfFirstName.get(i).toString()) == 0) {
+                counter++;
+            }
+        }
+        if (counter != 0) {
+            System.out.println(counter + " match found!");
+            for (int i = 0; i < arrayOfFirstName.size(); i++) {
+                if (name.compareTo(arrayOfFirstName.get(i).toString()) == 0) {
+                    Node<Person> personNode = getNode(i);
+                    System.out.println(personNode.getData().toString());
+                }
+            }
+        } else {
+            System.out.println("NO MATCH FOUND!");
+        }
+
+
     }
 
     @Override
