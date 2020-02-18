@@ -34,6 +34,7 @@ public class Main {
                     System.out.println("Last Name:");
                     lastName = scanner.nextLine();
                     contactList.setName(firstName, lastName);
+                    contactList.setFirstNameInList(firstName);
                     System.out.println("Contact Number:");
                     contactNumber[0] = scanner.nextLine();
                     for (int i = 1; i <= 2; i++) {
@@ -54,6 +55,11 @@ public class Main {
                 case 2:
                     contactList.viewAllContacts();
                     break;
+                case 3:
+                    System.out.println("You could search for a contact from there contact name");
+                    String name = scanner.next();
+                    contactList.search(name);
+                    break;
                 case 4:
                     System.out.println("Here are your contacts");
                     for (int i = 0; i < contactList.getArrayOfNames().size(); i++) {
@@ -61,11 +67,11 @@ public class Main {
                     }
                     System.out.println("Press the number against the contact to delete it: ");
                     int index = scanner.nextInt();
-                    scanner.next();
                     String tempName = contactList.getArrayOfNames().get(index - 1).toString();
                     contactList.delete(index);
                     System.out.println(tempName + " has been deleted from your contacts");
                     break;
+
             }
 
         }
