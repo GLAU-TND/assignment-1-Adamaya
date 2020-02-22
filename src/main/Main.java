@@ -64,11 +64,16 @@ public class Main {
                     for (int i = 0; i < contactList.getArrayOfNames().size(); i++) {
                         System.out.println((i + 1) + ". " + contactList.getArrayOfNames().get(i));
                     }
-                    System.out.println("Press the number against the contact to delete it: ");
-                    int index = scanner.nextInt();
-                    String tempName = contactList.getArrayOfNames().get(index - 1).toString();
-                    contactList.delete(index);
-                    System.out.println(tempName + " has been deleted from your contacts");
+                    if (contactList.getArrayOfNames().size() != 0) {
+                        System.out.println("Press the number against the contact to delete it: ");
+
+                        int index = scanner.nextInt();
+                        String tempName = contactList.getArrayOfNames().get(index - 1).toString();
+                        contactList.delete(index);
+                        System.out.println(tempName + " has been deleted from your contacts");
+                    } else {
+                        System.out.println("NO CONTACTS AVAILABLE");
+                    }
                     break;
                 case 5:
                     System.out.println("Thank You For Using Our Services");
