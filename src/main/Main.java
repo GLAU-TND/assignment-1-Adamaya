@@ -13,8 +13,8 @@ public class Main {
         String lastName;
         String[] contactNumber = new String[3];
         String email;
-        boolean flag;
-        while (flag = true) {
+        boolean flag = true;
+        while (flag == true) {
 
 
             System.out.println("welcome to Adam's contact list");
