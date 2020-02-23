@@ -46,9 +46,16 @@ public class Main {
                             break;
                         }
                     }
-                    System.out.println("Enter the Email:");
-                    email = scanner.next();
+                    System.out.println("Would you like to add email (y/n): ");
+                    char response = scanner.next().charAt(0);
+                    if (response == 'y') {
+                        System.out.println("Enter the Email:");
+                        email = scanner.next();
+                    } else {
+                        email = null;
+                    }
                     Person person = new Person(firstName, lastName, contactNumber, email);
+
                     contactList.add(person);
                     break;
                 case 2:
