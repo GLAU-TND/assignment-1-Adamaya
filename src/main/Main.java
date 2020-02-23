@@ -15,8 +15,7 @@ public class Main {
         String email;
         boolean flag = true;
         while (flag == true) {
-
-
+            System.out.println();
             System.out.println("welcome to Adam's contact list");
             System.out.println("Press 1 to add a new contact\n" +
                     "Press 2 to view all contacts\n" +
@@ -29,24 +28,25 @@ public class Main {
                 case 1:
                     System.out.println("You have chosen to add a new contact: \n" +
                             "Please enter the name of the Person");
-                    System.out.println("First Name:");
+                    System.out.print("First Name: ");
                     firstName = scanner.nextLine();
-                    System.out.println("Last Name:");
+                    System.out.print("Last Name: ");
                     lastName = scanner.nextLine();
                     contactList.setName(firstName, lastName);
                     contactList.setFirstNameInList(firstName);
-                    System.out.println("Contact Number:");
+                    System.out.print("Contact Number:");
                     contactNumber[0] = scanner.nextLine();
                     for (int i = 1; i <= 2; i++) {
-                        System.out.println("Would you like to add new Number?");
+                        System.out.print("Would you like to add new Number (y/n): ");
                         char response = scanner.next().charAt(0);
                         if (response == 'y') {
+                            System.out.print("Contact Number: ");
                             contactNumber[i] = scanner.next();
                         } else {
                             break;
                         }
                     }
-                    System.out.println("Would you like to add email (y/n): ");
+                    System.out.print("Would you like to add email (y/n): ");
                     char response = scanner.next().charAt(0);
                     if (response == 'y') {
                         System.out.println("Enter the Email:");
