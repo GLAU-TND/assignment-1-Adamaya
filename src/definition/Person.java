@@ -12,9 +12,9 @@ public class Person {
         sb.append("First Name: ").append(firstName).append('\n');
         sb.append("Last Name: ").append(lastName).append('\n');
         sb.append("Contact No: ");
-        for (int i = 0; i < contactNo.length; i++) {
-            sb.append((contactNo[0] != null && i == 0 ? contactNo[0] : "") + (contactNo[1] != null && i == 1 ? ", " + contactNo[1] : "") +
-                    (contactNo[2] != null && i == 2 ? ", " + contactNo[i] : ""));
+        for (int i = 0; i < this.contactNo.length; i++) {
+            sb.append((this.contactNo[0] != null && i == 0 ? this.contactNo[0] : "") + (this.contactNo[1] != null && i == 1 ? ", " + this.contactNo[1] : "") +
+                    (this.contactNo[2] != null && i == 2 ? ", " + this.contactNo[i] : ""));
         }
         sb.append("\nEmail: ").append((email != null ? email : "")).append('\n');
         sb.append("-------- * -------- * -------- * --------\n");
